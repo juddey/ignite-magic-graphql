@@ -5,7 +5,7 @@ const R = require('ramda')
 module.exports = async function (context) {
   // Learn more about context: https://infinitered.github.io/gluegun/#/context-api.md
   const { parameters, strings, print, ignite } = context
-  const { pascalCase, isBlank, isNotString } = strings
+  const { isBlank, isNotString } = strings
   const igniteConfig = ignite.loadIgniteConfig()
 
   // validation

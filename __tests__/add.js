@@ -1,6 +1,7 @@
 const sinon = require('sinon')
 const plugin = require('../plugin')
 const fixtures = require('./fixtures.js.fixture')
+const constants = require('../constants')
 
 test('adds the proper npm module', async () => {
   // spy on few things so we know they're called
@@ -23,11 +24,9 @@ test('adds the proper npm module', async () => {
 
   await plugin.add(context)
 
-  expect(addModule.calledWith('apollo-boost', {version: '^0.1.0'})).toEqual(true)
-  expect(addModule.calledWith('react-apollo')).toEqual(true)
-  expect(addModule.calledWith('graphql-tag')).toEqual(true)
-  expect(addModule.calledWith('graphql')).toEqual(true)
-  expect(addModule.calledWith('@types/graphql', { version: '^0.13.0', dev: true })).toEqual(true)
+  for (const x of constants.NPM_MODULES) {
+    expect(addModule.calledWith(x.package, x.options)).toEqual(true)
+  }
 
   expect(patchInFile.calledWith(`${process.cwd()}/src/app/main.ts`, {
     after: 'import { StorybookUIRoot } from "../../storybook"',

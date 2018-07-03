@@ -1,15 +1,6 @@
 // Ignite CLI plugin for GraphqlMagic
 // ----------------------------------------------------------------------------
 
-const NPM_MODULES = [
-  { package: 'graphql', options: { version: '^0.13.2' } },
-  { package: 'apollo-boost', options: { version: '^0.1.0' } },
-  { package: 'react-apollo', options: { version: '^2.1.0' } },
-  { package: 'graphql-tag', options: { version: '^2.9.1' } },
-  { package: 'apollo-cache-persist', options: { version: '^0.1.1' } },
-  { package: '@types/graphql', options: { version: '^0.13.0', dev: true } }
-]
-
 const constants = require('./constants')
 const R = require('ramda')
 
@@ -23,7 +14,7 @@ const add = async function (context) {
   const igniteConfig = ignite.loadIgniteConfig()
 
   // installeth the npm modules
-  for (const x of NPM_MODULES) { await ignite.addModule(x.package, x.options) }
+  for (const x of constants.NPM_MODULES) { await ignite.addModule(x.package, x.options) }
 
   const hasValidBoilerplate =
     R.intersection(R.keys(pkg.devDependencies), constants.supportedBoilerplates)
