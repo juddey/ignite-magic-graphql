@@ -18,13 +18,14 @@ You can change the component location in the ignite.json file.
 with that read, you should be able to: ignite g....
 ```js
   query <name> <domain>
+  mutation <name> <domain>  
 ```
 and have some fun. Enjoy!
 
 ### FAQ
 
-* I'm curious about the modules that are installed. Is there a list?
-[This way, please](https://github.com/juddey/ignite-graphql-magic/).
+* I'm curious about the modules that are installed. Is there a list? <br>
+[This way, please](https://github.com/juddey/ignite-graphql-magic/blob/master/constants.js#L2).
 
 ### License 
 MIT Justin Lane 2018.
