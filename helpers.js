@@ -26,4 +26,10 @@ const invalid = (context, igniteConfig) => {
   }
 }
 
-module.exports = { invalid }
+const filePath = (igniteConfig, parameters) => {
+  return igniteConfig.graphql.contextRequired
+    ? igniteConfig.graphql.component_location + parameters.second
+    : parameters.second
+}
+
+module.exports = { invalid, filePath }

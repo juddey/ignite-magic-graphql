@@ -1,5 +1,4 @@
-// @cliDescription Generates a Query Component
-// Generates a Query Component
+// @cliDescription Generates a Mutation Component
 const helpers = require('../helpers')
 
 module.exports = async function (context) {
@@ -8,17 +7,19 @@ module.exports = async function (context) {
   const igniteConfig = ignite.loadIgniteConfig()
 
   // validation
-  if (helpers.invalid(context, igniteConfig)) { return }
+  if (helpers.invalid(context, igniteConfig)) {
+    return
+  }
 
   const name = parameters.first
   const location = helpers.filePath(igniteConfig, parameters)
   const props = { name: name }
 
-  // Copy Query Template
+  // Copy Mutation Template
   const jobs = [
     {
-      template: 'query.js.ejs',
-      target: `${location}/${name}.query.js`
+      template: 'mutation.js.ejs',
+      target: `${location}/${name}.mutation.js`
     }
   ]
 

@@ -1,0 +1,28 @@
+import React from "react"
+import gql from "graphql-tag"
+import { Mutation } from "react-apollo"
+
+const ADD_QUERY = gql`
+  mutation addQuery($type: String!) {
+    addQuery(type: $type) {
+      id
+      type
+    }
+  }
+`;
+
+const <%= props.name %> = () => {
+  let input;
+
+  return (
+    <Mutation mutation={ADD_QUERY}>
+      {(addQuery, { data }) => (
+        <Button
+          onPress={e => {
+            addQuery({ variables: { type: input.value } });
+          }}
+        />
+      )}
+    </Mutation>
+  )
+}
