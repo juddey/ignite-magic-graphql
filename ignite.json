@@ -1,5 +1,5 @@
 {
   
-    "generators": [ "query" ]
+  "generators": [ "query", "mutation" ]
   
 }

@@ -1,7 +1,9 @@
+const sinon = require('sinon')
+
 const igniteConfigOne = {
   createdWith: '2.1.0',
   examples: 'classic',
-  navigation: 'react-navigation',
+  navigation: 'react-native-navigation',
   askToOverwrite: true,
   generators: {
     component: 'ignite-ir-boilerplate-bowser',
@@ -9,4 +11,34 @@ const igniteConfigOne = {
   }
 }
 
-module.exports = { igniteConfigOne }
+
+// spy on few things so we know they're called
+const addModule = sinon.spy()
+const patchInFile = sinon.spy()
+const write = sinon.spy()
+const exists = sinon.spy()
+const info = sinon.spy()
+const append = sinon.spy()
+const ask = sinon.spy()
+const copyBatch = sinon.spy()
+
+// Ignite Context Object.
+const defaultContext = {
+  ignite: { addModule, patchInFile, copyBatch, loadIgniteConfig: () => { return igniteConfigOne } },
+  print: { info },
+  prompt: { ask },
+  patching: { append },
+  filesystem: {
+    exists,
+    write,
+    read: () => {
+      return { name: 'boilerplate',
+        version: '0.0.1',
+        devDependencies:
+     {'ignite-magic-plate': '^0.0.1' } }
+    }
+  },
+  parameters: { options: { 'boost': true } }
+}
+
+module.exports = { igniteConfigOne, defaultContext }

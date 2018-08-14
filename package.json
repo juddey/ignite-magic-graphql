@@ -1,7 +1,7 @@
 {
   "name": "ignite-graphql-magic",
   "description": "Add some apollo graphql magic to your ignite project.",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "license": "MIT",
   "author": {
     "name": "Justin Lane",
@@ -19,7 +19,7 @@
     "semi": false,
     "singleQuote": true
   },
-  "standard": {
+  "prettier-standard": {
     "globals": [
       "beforeAll",
       "afterAll",
@@ -36,7 +36,7 @@
     "prettier": "^1.13.5",
     "prettier-standard": "^8.0.1",
     "ramda": "^0.25.0",
-    "sinon": "^2.1.7",
+    "sinon": "^6.1.3",
     "standard": "^11.0.0"
   }
 }

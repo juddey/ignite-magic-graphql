@@ -1,6 +1,7 @@
-import React from "react"
-import gql from "graphql-tag"
-import { Query } from "react-apollo"
+import React from 'react'
+import gql from 'graphql-tag'
+import { Query } from 'react-apollo'
+import { Text } from 'react-native'
 
 const GET_QUERY = gql`
   {
@@ -8,15 +9,17 @@ const GET_QUERY = gql`
   }
 `
 
-const <%= props.name %> = ({ onChangeFunc }) => (
+const <%= props.pascalName %> = ({ onChangeFunc }) => (
   <Query query={GET_QUERY}>
     {({ loading, error, data }) => {
-      if (loading) return "Loading..."
-      if (error) return `Error! ${error.message}`
+      if (loading) return (<Text> Loading... </Text>)
+      if (error) return (<Text>  Error! `${error.message}` </Text>)
 
       return (
-        /* Your JSX here */
+        /* Your JSX Here */
       )
     }}
   </Query>
 )
+
+export default <%= props.pascalName %>

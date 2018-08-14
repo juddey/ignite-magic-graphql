@@ -3,7 +3,8 @@ const helpers = require('../helpers')
 
 module.exports = async function (context) {
   // Learn more about context: https://infinitered.github.io/gluegun/#/context-api.md
-  const { parameters, ignite } = context
+  const { parameters, ignite, strings } = context
+  const { pascalCase } = strings
   const igniteConfig = ignite.loadIgniteConfig()
 
   // validation
@@ -13,7 +14,8 @@ module.exports = async function (context) {
 
   const name = parameters.first
   const location = helpers.filePath(igniteConfig, parameters)
-  const props = { name: name }
+  const pascalName = pascalCase(name)
+  const props = { name: name, pascalName: pascalName }
 
   // Copy Mutation Template
   const jobs = [

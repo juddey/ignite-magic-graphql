@@ -1,11 +1,11 @@
-# ignite-graphql-magic
+# ignite-magic-graphql
 
 Add some graphql magic :sparkles: to your ignite project.
 
 This plugin adds support for apollo client @ v2.1 through `apollo-boost` and `react-apollo`.
 
 ```js
-ignite add ignite-graphql-magic
+ignite add ignite-magic-graphql
 ```
 ## Generators
 Generators take two parameters: 
@@ -25,7 +25,7 @@ and have some fun. Enjoy!
 ### FAQ
 
 * I'm curious about the modules that are installed. Is there a list? <br>
-[This way, please](https://github.com/juddey/ignite-graphql-magic/blob/master/constants.js#L2).
+[This way, please](https://github.com/juddey/ignite-magic-graphql/blob/master/constants.js#L2).
 
 ### License 
 MIT Justin Lane 2018.
