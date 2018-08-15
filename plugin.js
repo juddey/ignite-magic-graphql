@@ -7,7 +7,7 @@ const R = require('ramda')
 // const PLUGIN_PATH = __dirname
 // const APP_PATH = process.cwd()
 
-const add = async function(context) {
+const add = async function (context) {
   // Learn more about context: https://infinitered.github.io/gluegun/#/context-api.md
   const { ignite, filesystem, print, parameters, prompt } = context
   const pkg = filesystem.read('package.json', 'json')
@@ -84,7 +84,7 @@ const add = async function(context) {
       }
     }
 
-    if (devDependencies.includes('ignite-magic-plate')) {
+    else {
       // TODO Support "function" different file paths.
       // copy the Apollo HOC to the app directory
       const jobs = [
