@@ -82,9 +82,7 @@ const add = async function (context) {
         print.info("Couldn't patch .babelrc. Add GRAPHQL_API to")
         print.info('babel-transform-inline-env-variables, "include" array.')
       }
-    }
-
-    else {
+    } else {
       // TODO Support "function" different file paths.
       // copy the Apollo HOC to the app directory
       const jobs = [
@@ -143,7 +141,7 @@ const add = async function (context) {
 /**
  * Remove yourself from the project.
  */
-const remove = async function(context) {
+const remove = async function (context) {
   // Learn more about context: https://infinitered.github.io/gluegun/#/context-api.md
   // const { ignite, filesystem } = context
   // remove the npm module and unlink it
