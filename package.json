@@ -1,5 +1,5 @@
 {
-  "name": "ignite-graphql-magic",
+  "name": "ignite-magic-graphql",
   "description": "Add some apollo graphql magic to your ignite project.",
   "version": "0.0.1",
   "license": "MIT",
@@ -28,7 +28,7 @@
       "describe"
     ]
   },
-  "repository": "juddey/ignite-graphql-magic",
+  "repository": "juddey/ignite-magic-graphql",
   "devDependencies": {
     "fs-jetpack": "^1.0.0",
     "jest": "^23.1.0",

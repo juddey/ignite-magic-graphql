@@ -24,8 +24,7 @@ and have some fun. Enjoy!
 
 ### FAQ
 
-* I'm curious about the modules that are installed. Is there a list? <br>
-[This way, please](https://github.com/juddey/ignite-magic-graphql/blob/master/constants.js#L2).
+* I'm curious about the modules that are installed. Is there a list? [This way, please](https://github.com/juddey/ignite-magic-graphql/blob/master/constants.js#L2).
 
 ### License 
 MIT Justin Lane 2018.
