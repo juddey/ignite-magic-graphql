@@ -1,7 +1,7 @@
 {
   "name": "ignite-magic-graphql",
   "description": "Add some apollo graphql magic to your ignite project.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "author": {
     "name": "Justin Lane",
