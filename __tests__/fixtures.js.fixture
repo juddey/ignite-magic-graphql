@@ -35,7 +35,7 @@ const defaultContext = {
       return { name: 'boilerplate',
         version: '0.0.1',
         devDependencies:
-     {'ignite-magic-plate': '^0.0.1' } }
+     {'ignite-base-plate': '^0.0.1' } }
     }
   },
   parameters: { options: { 'boost': true } }

@@ -19,6 +19,6 @@ const CUSTOM_NPM_MODULES = [
   { package: 'graphql-tag', options: { version: '^2.9.1' } }
 ]
 
-const supportedBoilerplates = ['ignite-ir-boilerplate-bowser', 'ignite-web-magic', 'ignite-magic-plate']
+const supportedBoilerplates = ['ignite-ir-boilerplate-bowser', 'ignite-web-magic', 'ignite-base-plate']
 
 module.exports = { supportedBoilerplates, APOLLO_NPM_MODULES, CUSTOM_NPM_MODULES }
