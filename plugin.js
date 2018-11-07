@@ -42,11 +42,13 @@ const add = async function (context) {
   const devDependencies = R.keys(pkg.devDependencies)
   const hasValidBoilerplate =
     R.intersection(devDependencies, constants.supportedBoilerplates).length > 0
+  const feature = R.path(['ignite-base-plate', 'format']) === 'feature'
+  const funct = R.path(['ignite-base-plate', 'format']) === 'function'  
 
   const addToIgnite = {
     npm_module: 'apollo',
     contextRequired: !!hasValidBoilerplate,
-    component_location: hasValidBoilerplate ? '/src/views/' : '/App/Components'
+    component_location: hasValidBoilerplate && feature ? "/src/views/" : "/App/Components"
   }
 
   if (hasValidBoilerplate) {
@@ -91,25 +93,26 @@ const add = async function (context) {
             setupAnswer === 'boost'
               ? 'BoostApolloHoc.js.ejs'
               : 'CustomApolloHoc.js.ejs',
-          target: `./src/app/ApolloHoc.js`
+          target: feature ? `./src/app/ApolloHoc.js` : `./src/App/ApolloHoc.js`
         }
       ]
 
       // make the templates and pass in props
       await ignite.copyBatch(context, jobs, null, { quiet: true })
 
+      const navPath = feature ? `navigation` : `Navigation`
       if (igniteConfig.navigation === 'react-native-navigation') {
         // Patch the ScreenRegistry
         ignite.patchInFile(
-          `${process.cwd()}/src/navigation/ScreenRegistry.js`,
+          `${process.cwd()}/src/${navPath}/ScreenRegistry.js`,
           {
             after: `import { Navigation } from 'react-native-navigation'`,
-            insert: `import ApolloHOC from '../app/ApolloHoc'`
+            insert: feature ? `import ApolloHOC from '../app/ApolloHoc'` : `import ApolloHOC from '../src/App/ApolloHoc'`
           }
         )
 
         print.info(
-          'Added to Screen Registry. Wrap your components in the Apollo HOC.'
+          'Added Hoc to Screen Registry. Wrap your components in the Apollo HOC.'
         )
       }
 
